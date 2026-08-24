@@ -54,7 +54,8 @@ export function PathScreen({ path, onExit }: { path: Path; onExit: () => void })
       </div>
 
       <AnimatePresence mode="wait">
-        {stage === "cards" && (
+        {stage === "cards" && path.cards[index] && (
+
           <motion.div
             key={`card-${index}`}
             drag="x"
