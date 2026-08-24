@@ -50,6 +50,29 @@ export function Home({
       </h2>
 
       <div className="mt-4 space-y-3">
+        <motion.button
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          whileTap={{ scale: 0.98 }}
+          onClick={onOpenTrack}
+          className="surface-card flex w-full items-center gap-4 rounded-3xl p-5 text-start transition-colors hover:border-primary/50"
+        >
+          <PiggyBank className="h-6 w-6 shrink-0 text-primary" />
+          <div className="min-w-0 flex-1">
+            <p className="font-display text-base font-bold">{t(trackUi.trackTitle)}</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+              {t(trackUi.trackBlurb)}
+            </p>
+            <p className="mt-3 text-[11px] font-semibold uppercase tracking-wider text-primary">
+              {t(trackUi.openTrack)}
+            </p>
+          </div>
+          <ChevronRight
+            className={`h-5 w-5 shrink-0 text-primary ${dir === "rtl" ? "rotate-180" : ""}`}
+          />
+        </motion.button>
+
         {paths.map((path, i) => (
           <motion.button
             key={path.id}

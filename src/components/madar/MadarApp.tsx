@@ -7,7 +7,11 @@ import { Splash } from "./Splash";
 import { Home } from "./Home";
 import { PathScreen } from "./PathScreen";
 
-type Screen = { name: "splash" } | { name: "home" } | { name: "path"; id: string };
+type Screen =
+  | { name: "splash" }
+  | { name: "home" }
+  | { name: "path"; id: string }
+  | { name: "track" };
 
 function Shell() {
   const { dir } = useLang();
