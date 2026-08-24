@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Check, Crown, Sparkles, X } from "lucide-react";
 import { useLang } from "@/lib/lang";
-import { payUi, plans } from "@/lib/finance-track";
+import { payPerks, payUi, plans } from "@/lib/finance-track";
 
 export function Paywall({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { t } = useLang();
@@ -95,7 +95,7 @@ export function Paywall({ open, onClose }: { open: boolean; onClose: () => void 
                   </div>
 
                   <ul className="mt-5 space-y-2">
-                    {payUi.perks.map((perk, i) => (
+                    {payPerks.map((perk, i) => (
                       <li key={i} className="flex items-center gap-2 text-xs text-muted-foreground">
                         <Sparkles className="h-3.5 w-3.5 shrink-0 text-primary" />
                         {t(perk)}
