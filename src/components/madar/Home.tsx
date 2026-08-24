@@ -49,7 +49,7 @@ export function Home({ onOpenPath }: { onOpenPath: (id: string) => void }) {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.12 + i * 0.08 }}
-            whileTap={path.available ? { scale: 0.98 } : undefined}
+            whileTap={{ scale: path.available ? 0.98 : 1 }}
             disabled={!path.available}
             onClick={() => onOpenPath(path.id)}
             className={`surface-card flex w-full items-center gap-4 rounded-3xl p-5 text-start transition-colors ${
