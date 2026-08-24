@@ -13,7 +13,7 @@ const LangContext = createContext<Ctx | null>(null);
 
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>("en");
-  const dir = lang === "ar" ? "rtl" : "ltr";
+  const dir: "rtl" | "ltr" = lang === "ar" ? "rtl" : "ltr";
 
   useEffect(() => {
     document.documentElement.lang = lang;
