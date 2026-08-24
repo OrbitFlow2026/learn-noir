@@ -3,6 +3,7 @@ import { ChevronRight, Flame, Lock, PiggyBank } from "lucide-react";
 import { useLang } from "@/lib/lang";
 import { paths, ui } from "@/lib/madar-content";
 import { trackUi } from "@/lib/finance-track";
+import logo from "@/assets/madar-logo.png";
 
 export function Home({
   onOpenPath,
@@ -16,7 +17,16 @@ export function Home({
   return (
     <div className="bg-hero flex-1 px-5 pb-16 pt-6">
       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
-        <h1 className="text-2xl font-bold">{t(ui.greeting)}</h1>
+        <div className="flex items-center gap-3">
+          <img src={logo} alt="Madar" width={44} height={44} className="h-11 w-11" />
+          <div>
+            <p className="font-display text-2xl font-bold leading-none tracking-tight">
+              {t({ en: "Madar", ar: "مدار" })}
+            </p>
+            <p className="mt-1.5 text-xs text-primary">{t(ui.slogan)}</p>
+          </div>
+        </div>
+        <h1 className="mt-6 text-2xl font-bold">{t(ui.greeting)}</h1>
         <p className="mt-1 text-sm text-muted-foreground">{t(ui.greetingSub)}</p>
       </motion.div>
 
