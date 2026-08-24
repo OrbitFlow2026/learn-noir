@@ -15,6 +15,7 @@ export function PathScreen({ path, onExit }: { path: Path; onExit: () => void })
   const total = path.cards.length;
   const rtl = dir === "rtl";
   const selected = path.quiz?.options.find((o) => o.id === picked) ?? null;
+  const card = path.cards[index];
 
   const go = (delta: number) => {
     const next = index + delta;
@@ -54,7 +55,7 @@ export function PathScreen({ path, onExit }: { path: Path; onExit: () => void })
       </div>
 
       <AnimatePresence mode="wait">
-        {stage === "cards" && path.cards[index] && (
+        {stage === "cards" && card && (
 
           <motion.div
             key={`card-${index}`}
@@ -72,13 +73,13 @@ export function PathScreen({ path, onExit }: { path: Path; onExit: () => void })
             className="surface-card mt-6 flex-1 cursor-grab touch-pan-y rounded-[2rem] p-7 active:cursor-grabbing"
           >
             <span className="rounded-full bg-primary/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary">
-              {t(path.cards[index].tag)}
+              {t(card.tag)}
             </span>
             <h2 className="mt-5 text-2xl font-bold leading-snug">
-              {t(path.cards[index].title)}
+              {t(card.title)}
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
-              {t(path.cards[index].body)}
+              {t(card.body)}
             </p>
             <p className="mt-8 text-xs text-muted-foreground/70">{t(ui.swipeHint)}</p>
           </motion.div>
