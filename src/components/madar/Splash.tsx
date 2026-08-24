@@ -8,7 +8,7 @@ export function Splash({ onStart }: { onStart: () => void }) {
   const { t, lang, dir } = useLang();
 
   return (
-    <div className="bg-hero flex min-h-[100dvh] flex-col items-center justify-center px-7 text-center">
+    <div className="bg-hero flex flex-1 flex-col items-center justify-center px-7 py-16 text-center">
       <motion.div
         initial={{ scale: 0.7, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
