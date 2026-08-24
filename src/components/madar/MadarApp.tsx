@@ -33,7 +33,13 @@ function Shell() {
         >
           {screen.name === "splash" && <Splash onStart={() => setScreen({ name: "home" })} />}
           {screen.name === "home" && (
-            <Home onOpenPath={(id) => setScreen({ name: "path", id })} />
+            <Home
+              onOpenPath={(id) => setScreen({ name: "path", id })}
+              onOpenTrack={() => setScreen({ name: "track" })}
+            />
+          )}
+          {screen.name === "track" && (
+            <FinanceTrack onExit={() => setScreen({ name: "home" })} />
           )}
           {activePath && (
             <PathScreen path={activePath} onExit={() => setScreen({ name: "home" })} />
