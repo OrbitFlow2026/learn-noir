@@ -103,3 +103,48 @@ export const platforms: { name: string; url: string; tag: Bi }[] = [
     tag: { en: "ETFs & stocks", ar: "صناديق وأسهم" },
   },
 ];
+
+export const payUi = {
+  title: { en: "Join Madar Premium", ar: "اشترك في مدار المميز" },
+  subtitle: {
+    en: "Unlock institutional-grade investment insights in Dubai.",
+    ar: "افتح آفاق الاستثمار الاحترافي في دبي.",
+  },
+  cta: { en: "Unlock Now", ar: "اشترك الآن" },
+  close: { en: "Close", ar: "إغلاق" },
+  note: {
+    en: "Simulated checkout — no payment is taken.",
+    ar: "عملية تجريبية — لا يتم خصم أي مبلغ.",
+  },
+  successTitle: { en: "You're Premium", ar: "أصبحت عضوًا مميزًا" },
+  successBody: {
+    en: "All Madar modules are now unlocked. Welcome aboard.",
+    ar: "تم فتح جميع وحدات مدار. أهلًا بك.",
+  },
+  successCta: { en: "Start learning", ar: "ابدأ التعلّم" },
+} satisfies Record<string, Bi>;
+
+export const payPerks: Bi[] = [
+  {
+    en: "Every locked module, instantly available",
+    ar: "جميع الوحدات المقفلة متاحة فورًا",
+  },
+  { en: "Dubai-specific platform playbooks", ar: "أدلة عملية لمنصات دبي" },
+  { en: "New tracks every month", ar: "مسارات جديدة كل شهر" },
+];
+
+export type Plan = { id: string; price: Bi; period: Bi; badge?: Bi };
+
+export const plans: Plan[] = [
+  {
+    id: "month",
+    price: { en: "AED 39", ar: "٣٩ درهمًا" },
+    period: { en: "per month", ar: "شهريًا" },
+  },
+  {
+    id: "year",
+    price: { en: "AED 249", ar: "٢٤٩ درهمًا" },
+    period: { en: "per year", ar: "سنويًا" },
+    badge: { en: "Save 45%", ar: "وفّر ٤٥٪" },
+  },
+];
