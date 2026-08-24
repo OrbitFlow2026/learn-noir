@@ -1,9 +1,16 @@
 import { motion } from "motion/react";
-import { ChevronRight, Flame, Lock } from "lucide-react";
+import { ChevronRight, Flame, Lock, PiggyBank } from "lucide-react";
 import { useLang } from "@/lib/lang";
 import { paths, ui } from "@/lib/madar-content";
+import { trackUi } from "@/lib/finance-track";
 
-export function Home({ onOpenPath }: { onOpenPath: (id: string) => void }) {
+export function Home({
+  onOpenPath,
+  onOpenTrack,
+}: {
+  onOpenPath: (id: string) => void;
+  onOpenTrack: () => void;
+}) {
   const { t, dir } = useLang();
 
   return (
