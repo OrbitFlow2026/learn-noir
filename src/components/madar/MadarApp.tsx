@@ -6,6 +6,7 @@ import { TopBar } from "./TopBar";
 import { Splash } from "./Splash";
 import { Home } from "./Home";
 import { PathScreen } from "./PathScreen";
+import { FinanceTrack } from "./FinanceTrack";
 
 type Screen =
   | { name: "splash" }
