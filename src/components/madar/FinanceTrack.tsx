@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowUpRight, Lock, PiggyBank, Sparkles } from "lucide-react
 import { useLang } from "@/lib/lang";
 import { ui } from "@/lib/madar-content";
 import { platforms, trackModules, trackUi } from "@/lib/finance-track";
+import { Paywall } from "./Paywall";
 
 function BudgetCalculator() {
   const { t, lang } = useLang();
@@ -77,7 +78,7 @@ function BudgetCalculator() {
             href={p.url}
             target="_blank"
             rel="noreferrer noopener"
-            className="rounded-2xl border border-primary/30 bg-primary/10 p-3 transition-colors hover:bg-primary/20"
+            className="group rounded-2xl border border-primary/30 bg-primary/10 p-3 shadow-[var(--shadow-panel)] transition-all hover:border-primary/70 hover:bg-primary/20 hover:shadow-[var(--shadow-glow)] active:scale-[0.98]"
           >
             <span className="flex items-center gap-1 text-sm font-bold text-primary">
               {p.name}
@@ -96,6 +97,7 @@ function BudgetCalculator() {
 export function FinanceTrack({ onExit }: { onExit: () => void }) {
   const { t, dir } = useLang();
   const rtl = dir === "rtl";
+  const [payOpen, setPayOpen] = useState(false);
 
   return (
     <div className="bg-hero flex-1 px-5 pb-16 pt-4">
@@ -120,7 +122,10 @@ export function FinanceTrack({ onExit }: { onExit: () => void }) {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.06 * i }}
-            className={`surface-card rounded-3xl p-5 ${m.locked ? "opacity-80" : ""}`}
+            onClick={m.locked ? () => setPayOpen(true) : undefined}
+            className={`surface-card rounded-3xl p-5 ${
+              m.locked ? "cursor-pointer transition-colors hover:border-primary/50" : ""
+            }`}
           >
             <div className="flex items-start gap-3">
               <div className="min-w-0 flex-1">
@@ -163,7 +168,9 @@ export function FinanceTrack({ onExit }: { onExit: () => void }) {
             </ul>
 
             {m.locked && (
-              <button className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl border border-primary/40 bg-primary/10 px-4 py-3 text-xs font-bold text-primary transition-colors hover:bg-primary/20">
+              <button
+                onClick={() => setPayOpen(true)}
+                className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl border border-primary/40 bg-primary/10 px-4 py-3 text-xs font-bold text-primary transition-colors hover:bg-primary/20">
                 <Lock className="h-3.5 w-3.5" />
                 {t(trackUi.locked)}
               </button>
@@ -173,6 +180,7 @@ export function FinanceTrack({ onExit }: { onExit: () => void }) {
       </div>
 
       <BudgetCalculator />
+      <Paywall open={payOpen} onClose={() => setPayOpen(false)} />
     </div>
   );
 }
