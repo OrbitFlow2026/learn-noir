@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import { ArrowLeft, ArrowUpRight, Lock, PiggyBank, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, PiggyBank, Sparkles } from "lucide-react";
 import { useLang } from "@/lib/lang";
 import { ui } from "@/lib/madar-content";
 import { platforms, trackModules, trackUi } from "@/lib/finance-track";
-import { Paywall } from "./Paywall";
 
 function BudgetCalculator() {
   const { t, lang } = useLang();
@@ -97,7 +96,6 @@ function BudgetCalculator() {
 export function FinanceTrack({ onExit }: { onExit: () => void }) {
   const { t, dir } = useLang();
   const rtl = dir === "rtl";
-  const [payOpen, setPayOpen] = useState(false);
 
   return (
     <div className="bg-hero flex-1 px-5 pb-16 pt-4">
@@ -112,6 +110,17 @@ export function FinanceTrack({ onExit }: { onExit: () => void }) {
         <p className="truncate font-display text-sm font-bold">{t(trackUi.trackTitle)}</p>
       </div>
 
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="mt-5 flex items-center gap-2 rounded-2xl border border-primary/40 bg-primary/10 px-4 py-2.5"
+      >
+        <Sparkles className="h-4 w-4 shrink-0 text-primary" />
+        <p className="text-[11px] font-semibold leading-snug text-primary">
+          {t(trackUi.promo)}
+        </p>
+      </motion.div>
+
       <h1 className="mt-6 text-2xl font-bold leading-snug">{t(trackUi.trackTitle)}</h1>
       <p className="mt-1 text-sm text-muted-foreground">{t(trackUi.trackBlurb)}</p>
 
@@ -122,10 +131,7 @@ export function FinanceTrack({ onExit }: { onExit: () => void }) {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.06 * i }}
-            onClick={m.locked ? () => setPayOpen(true) : undefined}
-            className={`surface-card rounded-3xl p-5 ${
-              m.locked ? "cursor-pointer transition-colors hover:border-primary/50" : ""
-            }`}
+            className="surface-card rounded-3xl p-5"
           >
             <div className="flex items-start gap-3">
               <div className="min-w-0 flex-1">
@@ -136,19 +142,9 @@ export function FinanceTrack({ onExit }: { onExit: () => void }) {
                   {t(m.title)}
                 </h2>
               </div>
-              <span
-                className={`flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider ${
-                  m.locked
-                    ? "bg-muted text-muted-foreground"
-                    : "bg-success/15 text-success"
-                }`}
-              >
-                {m.locked ? (
-                  <Lock className="h-3 w-3" />
-                ) : (
-                  <Sparkles className="h-3 w-3" />
-                )}
-                {m.locked ? t(trackUi.premium) : t(trackUi.free)}
+              <span className="flex shrink-0 items-center gap-1 rounded-full bg-success/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-success">
+                <Sparkles className="h-3 w-3" />
+                {t(trackUi.free)}
               </span>
             </div>
 
@@ -156,31 +152,21 @@ export function FinanceTrack({ onExit }: { onExit: () => void }) {
               {m.points.map((point, pi) => (
                 <li key={pi} className="flex gap-3">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  <p
-                    className={`text-[13px] leading-relaxed text-muted-foreground ${
-                      m.locked ? "select-none blur-[3px]" : ""
-                    }`}
-                  >
+                  <p className="text-[13px] leading-relaxed text-muted-foreground">
                     {t(point)}
                   </p>
                 </li>
               ))}
             </ul>
-
-            {m.locked && (
-              <button
-                onClick={() => setPayOpen(true)}
-                className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl border border-primary/40 bg-primary/10 px-4 py-3 text-xs font-bold text-primary transition-colors hover:bg-primary/20">
-                <Lock className="h-3.5 w-3.5" />
-                {t(trackUi.locked)}
-              </button>
-            )}
           </motion.article>
         ))}
       </div>
 
       <BudgetCalculator />
-      <Paywall open={payOpen} onClose={() => setPayOpen(false)} />
+
+      <p className="mx-auto mt-8 max-w-sm text-center text-[10px] leading-relaxed text-muted-foreground/70">
+        {t(trackUi.disclaimer)}
+      </p>
     </div>
   );
 }
