@@ -117,6 +117,10 @@ export function Home({
           </motion.button>
         ))}
       </div>
+
+      <p className="mx-auto mt-10 max-w-sm text-center text-[10px] leading-relaxed text-muted-foreground/70">
+        {t(trackUi.disclaimer)}
+      </p>
     </div>
   );
 }
