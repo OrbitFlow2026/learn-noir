@@ -10,7 +10,7 @@ export const trackUi = {
     ar: "الادخار والعقار الرقمي والأسواق — بالطريقة الإماراتية.",
   },
   free: { en: "Free", ar: "مجاني" },
-  premium: { en: "Premium", ar: "مميز" },
+  premium: { en: "Free now", ar: "مجاني الآن" },
   locked: { en: "Unlock with Premium", ar: "افتح المحتوى المميز" },
   module: { en: "Module", ar: "وحدة" },
   calcTitle: { en: "50/30/20 Budget Calculator", ar: "حاسبة الميزانية ٥٠/٣٠/٢٠" },
@@ -18,7 +18,19 @@ export const trackUi = {
     en: "Enter your monthly salary in AED.",
     ar: "أدخل راتبك الشهري بالدرهم.",
   },
-  salary: { en: "Monthly salary (AED)", ar: "الراتب الشهري (درهم)" },
+  salary: {
+    en: "Monthly income (AED / currency)",
+    ar: "الدخل الشهري (الدرهم / العملة)",
+  },
+  currency: { en: "Currency", ar: "العملة" },
+  promo: {
+    en: "Launch Offer: Premium Access Free for a Limited Time",
+    ar: "عرض الإطلاق: الوصول المميز مجاني لفترة محدودة",
+  },
+  disclaimer: {
+    en: "Disclaimer: Madar app is strictly an educational platform. It does not provide direct financial advice. Investing involves risks, and all financial decisions remain entirely your own responsibility.",
+    ar: "إخلاء مسؤولية: تطبيق مدار هو منصة تعليمية وتثقيفية فقط، ولا يقدم أي استشارات مالية مباشرة. الاستثمار ينطوي على مخاطر، وقراراتك المادية هي مسؤوليتك الكاملة.",
+  },
   needs: { en: "Needs", ar: "الاحتياجات" },
   needsSub: { en: "Rent, bills, groceries", ar: "الإيجار والفواتير والتسوق" },
   wants: { en: "Wants", ar: "الرغبات" },
@@ -58,7 +70,7 @@ export const trackModules: TrackModule[] = [
   {
     id: "property",
     index: 2,
-    locked: true,
+    locked: false,
     title: { en: "Digital Real Estate Investment", ar: "الاستثمار العقاري الرقمي" },
     points: [
       {
@@ -70,7 +82,7 @@ export const trackModules: TrackModule[] = [
   {
     id: "stocks",
     index: 3,
-    locked: true,
+    locked: false,
     title: { en: "Stocks & ETF Trading", ar: "الأسهم وتداول صناديق المؤشرات" },
     points: [
       {
@@ -94,57 +106,12 @@ export const platforms: { name: string; url: string; tag: Bi }[] = [
   },
   {
     name: "Stake",
-    url: "https://getstake.com",
+    url: "https://tinyurl.com",
     tag: { en: "Property from AED 500", ar: "عقار من ٥٠٠ درهم" },
   },
   {
     name: "Sarwa",
-    url: "https://www.sarwa.co",
+    url: "https://tinyurl.com",
     tag: { en: "ETFs & stocks", ar: "صناديق وأسهم" },
-  },
-];
-
-export const payUi = {
-  title: { en: "Join Madar Premium", ar: "اشترك في مدار المميز" },
-  subtitle: {
-    en: "Unlock institutional-grade investment insights in Dubai.",
-    ar: "افتح آفاق الاستثمار الاحترافي في دبي.",
-  },
-  cta: { en: "Unlock Now", ar: "اشترك الآن" },
-  close: { en: "Close", ar: "إغلاق" },
-  note: {
-    en: "Simulated checkout — no payment is taken.",
-    ar: "عملية تجريبية — لا يتم خصم أي مبلغ.",
-  },
-  successTitle: { en: "You're Premium", ar: "أصبحت عضوًا مميزًا" },
-  successBody: {
-    en: "All Madar modules are now unlocked. Welcome aboard.",
-    ar: "تم فتح جميع وحدات مدار. أهلًا بك.",
-  },
-  successCta: { en: "Start learning", ar: "ابدأ التعلّم" },
-} satisfies Record<string, Bi>;
-
-export const payPerks: Bi[] = [
-  {
-    en: "Every locked module, instantly available",
-    ar: "جميع الوحدات المقفلة متاحة فورًا",
-  },
-  { en: "Dubai-specific platform playbooks", ar: "أدلة عملية لمنصات دبي" },
-  { en: "New tracks every month", ar: "مسارات جديدة كل شهر" },
-];
-
-export type Plan = { id: string; price: Bi; period: Bi; badge?: Bi };
-
-export const plans: Plan[] = [
-  {
-    id: "month",
-    price: { en: "AED 39", ar: "٣٩ درهمًا" },
-    period: { en: "per month", ar: "شهريًا" },
-  },
-  {
-    id: "year",
-    price: { en: "AED 249", ar: "٢٤٩ درهمًا" },
-    period: { en: "per year", ar: "سنويًا" },
-    badge: { en: "Save 45%", ar: "وفّر ٤٥٪" },
   },
 ];
