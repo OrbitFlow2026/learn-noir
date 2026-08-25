@@ -15,8 +15,8 @@ export const trackUi = {
   module: { en: "Module", ar: "وحدة" },
   calcTitle: { en: "50/30/20 Budget Calculator", ar: "حاسبة الميزانية ٥٠/٣٠/٢٠" },
   calcSub: {
-    en: "Enter your monthly salary in AED.",
-    ar: "أدخل راتبك الشهري بالدرهم.",
+    en: "Enter your monthly income — AED or any currency.",
+    ar: "أدخل دخلك الشهري بالدرهم أو بأي عملة.",
   },
   salary: {
     en: "Monthly income (AED / currency)",
