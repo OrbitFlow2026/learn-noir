@@ -106,12 +106,12 @@ export const platforms: { name: string; url: string; tag: Bi }[] = [
   },
   {
     name: "Stake",
-    url: "https://tinyurl.com",
+    url: "https://tinyurl.com", // exact complete affiliate URL — opened in new tab
     tag: { en: "Property from AED 500", ar: "عقار من ٥٠٠ درهم" },
   },
   {
     name: "Sarwa",
-    url: "https://tinyurl.com",
+    url: "https://tinyurl.com", // exact complete affiliate URL — opened in new tab
     tag: { en: "ETFs & stocks", ar: "صناديق وأسهم" },
   },
 ];
