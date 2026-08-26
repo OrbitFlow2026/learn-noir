@@ -1,7 +1,7 @@
 import { Languages } from "lucide-react";
-import logo from "@/assets/madar-logo.png";
+import logo from "@/assets/orbitflow-logo.png";
 import { useLang } from "@/lib/lang";
-import { ui } from "@/lib/madar-content";
+import { ui } from "@/lib/orbitflow-content";
 
 export function TopBar() {
   const { t, toggle, lang } = useLang();
@@ -9,9 +9,9 @@ export function TopBar() {
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-border/60 bg-background/80 px-5 py-3 backdrop-blur-xl">
       <div className="flex items-center gap-2">
-        <img src={logo} alt="Madar" width={28} height={28} className="h-7 w-7" />
+        <img src={logo} alt="OrbitFlow" width={28} height={28} className="h-7 w-7" />
         <span className="font-display text-lg font-bold tracking-tight">
-          {lang === "ar" ? "مدار" : "Madar"}
+          {lang === "ar" ? "أوربت فلو" : "OrbitFlow"}
         </span>
       </div>
       <button

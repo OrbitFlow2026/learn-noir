@@ -1,4 +1,8 @@
-import type { Bi } from "./madar-content";
+import type { Bi } from "./orbitflow-content";
+
+const TINYURL_BASE = "https://tinyurl.com";
+export const STAKE_URL = TINYURL_BASE + "/madar-stake";
+export const SARWA_URL = TINYURL_BASE + "/madar-invest";
 
 export const trackUi = {
   trackTitle: {
@@ -11,7 +15,6 @@ export const trackUi = {
   },
   free: { en: "Free", ar: "مجاني" },
   premium: { en: "Free now", ar: "مجاني الآن" },
-  locked: { en: "Unlock with Premium", ar: "افتح المحتوى المميز" },
   module: { en: "Module", ar: "وحدة" },
   calcTitle: { en: "50/30/20 Budget Calculator", ar: "حاسبة الميزانية ٥٠/٣٠/٢٠" },
   calcSub: {
@@ -28,8 +31,8 @@ export const trackUi = {
     ar: "عرض الإطلاق: الوصول المميز مجاني لفترة محدودة",
   },
   disclaimer: {
-    en: "Disclaimer: Madar app is strictly an educational platform. It does not provide direct financial advice. Investing involves risks, and all financial decisions remain entirely your own responsibility.",
-    ar: "إخلاء مسؤولية: تطبيق مدار هو منصة تعليمية وتثقيفية فقط، ولا يقدم أي استشارات مالية مباشرة. الاستثمار ينطوي على مخاطر، وقراراتك المادية هي مسؤوليتك الكاملة.",
+    en: "Disclaimer: OrbitFlow app is strictly an educational platform. It does not provide direct financial advice. Investing involves risks, and all financial decisions remain entirely your own responsibility.",
+    ar: "إخلاء مسؤولية: تطبيق أوربت فلو هو منصة تعليمية وتثقيفية فقط، ولا يقدم أي استشارات مالية مباشرة. الاستثمار ينطوي على مخاطر، وقراراتك المادية هي مسؤوليتك الكاملة.",
   },
   needs: { en: "Needs", ar: "الاحتياجات" },
   needsSub: { en: "Rent, bills, groceries", ar: "الإيجار والفواتير والتسوق" },
@@ -45,7 +48,7 @@ export const trackUi = {
 export type TrackModule = {
   id: string;
   index: number;
-  locked: boolean;
+  platform?: "National Bonds" | "Wio Bank" | "Stake" | "Sarwa";
   title: Bi;
   points: Bi[];
 };
@@ -54,7 +57,7 @@ export const trackModules: TrackModule[] = [
   {
     id: "saving",
     index: 1,
-    locked: false,
+    platform: "Wio Bank",
     title: { en: "Smart Saving & Yield Accounts", ar: "الادخار الذكي وحسابات العوائد" },
     points: [
       {
@@ -70,7 +73,7 @@ export const trackModules: TrackModule[] = [
   {
     id: "property",
     index: 2,
-    locked: false,
+    platform: "Stake",
     title: { en: "Digital Real Estate Investment", ar: "الاستثمار العقاري الرقمي" },
     points: [
       {
@@ -82,7 +85,7 @@ export const trackModules: TrackModule[] = [
   {
     id: "stocks",
     index: 3,
-    locked: false,
+    platform: "Sarwa",
     title: { en: "Stocks & ETF Trading", ar: "الأسهم وتداول صناديق المؤشرات" },
     points: [
       {
@@ -106,12 +109,12 @@ export const platforms: { name: string; url: string; tag: Bi }[] = [
   },
   {
     name: "Stake",
-    url: "https://tinyurl.com", // exact complete affiliate URL — opened in new tab
+    url: STAKE_URL,
     tag: { en: "Property from AED 500", ar: "عقار من ٥٠٠ درهم" },
   },
   {
     name: "Sarwa",
-    url: "https://tinyurl.com", // exact complete affiliate URL — opened in new tab
+    url: SARWA_URL,
     tag: { en: "ETFs & stocks", ar: "صناديق وأسهم" },
   },
 ];

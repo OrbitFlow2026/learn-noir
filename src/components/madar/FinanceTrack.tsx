@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { ArrowLeft, ArrowUpRight, PiggyBank, Sparkles } from "lucide-react";
 import { useLang } from "@/lib/lang";
-import { ui } from "@/lib/madar-content";
+import { ui } from "@/lib/orbitflow-content";
 import { platforms, trackModules, trackUi } from "@/lib/finance-track";
 
 function BudgetCalculator() {
@@ -158,6 +158,21 @@ export function FinanceTrack({ onExit }: { onExit: () => void }) {
                 </li>
               ))}
             </ul>
+            {m.platform && (() => {
+              const platform = platforms.find((item) => item.name === m.platform);
+              if (!platform) return null;
+              return (
+                <a
+                  href={platform.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="mt-5 flex items-center justify-between rounded-2xl border border-primary/30 bg-primary/10 px-4 py-3 text-sm font-bold text-primary transition-colors hover:border-primary/70 hover:bg-primary/20"
+                >
+                  <span>{platform.name}</span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              );
+            })()}
           </motion.article>
         ))}
       </div>

@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MadarApp } from "@/components/madar/MadarApp";
+import { OrbitFlowApp } from "@/components/madar/OrbitFlowApp";
 
-const title = "Madar — Expand your horizons in 5 minutes";
+const title = "OrbitFlow — Learn in 5 Minutes";
 const description =
-  "Madar is a bilingual (EN/العربية) micro-learning app: five-minute lessons on AI for business, financial literacy and agile leadership.";
+  "OrbitFlow is a bilingual micro-learning app with five-minute lessons on AI, financial literacy and agile leadership.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -12,7 +12,9 @@ export const Route = createFileRoute("/")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: MadarApp,
+  component: OrbitFlowApp,
 });

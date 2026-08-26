@@ -1,9 +1,9 @@
 import { motion } from "motion/react";
 import { ChevronRight, Flame, Lock, PiggyBank } from "lucide-react";
 import { useLang } from "@/lib/lang";
-import { paths, ui } from "@/lib/madar-content";
+import { paths, ui } from "@/lib/orbitflow-content";
 import { trackUi } from "@/lib/finance-track";
-import logo from "@/assets/madar-logo.png";
+import logo from "@/assets/orbitflow-logo.png";
 
 export function Home({
   onOpenPath,
@@ -18,10 +18,10 @@ export function Home({
     <div className="bg-hero flex-1 px-5 pb-16 pt-6">
       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
         <div className="flex items-center gap-3">
-          <img src={logo} alt="Madar" width={44} height={44} className="h-11 w-11" />
+          <img src={logo} alt="OrbitFlow" width={44} height={44} className="h-11 w-11" />
           <div>
             <p className="font-display text-2xl font-bold leading-none tracking-tight">
-              {t({ en: "Madar", ar: "مدار" })}
+              {t({ en: "OrbitFlow", ar: "أوربت فلو" })}
             </p>
             <p className="mt-1.5 text-xs text-primary">{t(ui.slogan)}</p>
           </div>
