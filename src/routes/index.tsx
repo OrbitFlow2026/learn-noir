@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { OrbitFlowApp } from "@/components/madar/MadarApp";
+import { OrbitFlowApp } from "@/components/madar/OrbitFlowApp";
 
 const title = "OrbitFlow — Learn in 5 Minutes";
 const description =
