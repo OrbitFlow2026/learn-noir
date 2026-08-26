@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import logo from "@/assets/madar-logo.png";
+import logo from "@/assets/orbitflow-logo.png";
 import { useLang } from "@/lib/lang";
-import { ui } from "@/lib/madar-content";
+import { ui } from "@/lib/orbitflow-content";
 
 export function Splash({ onStart }: { onStart: () => void }) {
   const { t, lang, dir } = useLang();
@@ -16,7 +16,7 @@ export function Splash({ onStart }: { onStart: () => void }) {
         className="relative"
       >
         <div className="absolute inset-0 -z-10 rounded-full bg-primary/25 blur-3xl" />
-        <img src={logo} alt="Madar logo" width={140} height={140} className="h-32 w-32" />
+        <img src={logo} alt="OrbitFlow logo" width={140} height={140} className="h-32 w-32" />
       </motion.div>
 
       <motion.h1
@@ -25,7 +25,7 @@ export function Splash({ onStart }: { onStart: () => void }) {
         transition={{ delay: 0.15 }}
         className="text-gradient-teal mt-7 text-5xl font-bold"
       >
-        {lang === "ar" ? "مدار" : "Madar"}
+        {lang === "ar" ? "أوربت فلو" : "OrbitFlow"}
       </motion.h1>
 
       <motion.p

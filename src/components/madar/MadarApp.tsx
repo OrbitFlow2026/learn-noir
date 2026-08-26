@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { LangProvider, useLang } from "@/lib/lang";
-import { paths } from "@/lib/madar-content";
+import { paths } from "@/lib/orbitflow-content";
 import { TopBar } from "./TopBar";
 import { Splash } from "./Splash";
 import { Home } from "./Home";
@@ -51,7 +51,7 @@ function Shell() {
   );
 }
 
-export function MadarApp() {
+export function OrbitFlowApp() {
   return (
     <LangProvider>
       <Shell />

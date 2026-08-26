@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
-import type { Bi, Lang } from "./madar-content";
+import type { Bi, Lang } from "./orbitflow-content";
 
 type Ctx = {
   lang: Lang;

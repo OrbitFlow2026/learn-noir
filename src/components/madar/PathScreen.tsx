@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowLeft, ArrowRight, Check, PartyPopper, X } from "lucide-react";
 import { useLang } from "@/lib/lang";
-import { ui, type Path } from "@/lib/madar-content";
+import { ui, type Path } from "@/lib/orbitflow-content";
 
 type Stage = "cards" | "quiz" | "done";
 

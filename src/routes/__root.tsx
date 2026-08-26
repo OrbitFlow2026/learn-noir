@@ -77,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Madar — Micro-learning in 5 minutes" },
+      { title: "OrbitFlow — Micro-learning in 5 minutes" },
       {
         name: "description",
         content: "Bilingual five-minute micro-learning for ambitious professionals.",
