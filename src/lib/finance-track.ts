@@ -2,7 +2,7 @@ import type { Bi } from "./orbitflow-content";
 
 const TINYURL_BASE = "https://tinyurl.com";
 export const STAKE_URL = TINYURL_BASE + "/madar-stake";
-export const SARWA_URL = TINYURL_BASE + "/madar-invest";
+export const SARWA_URL = "https://tinyurl.com/madar-invest";
 
 export const trackUi = {
   trackTitle: {
