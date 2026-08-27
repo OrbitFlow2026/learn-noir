@@ -1,6 +1,14 @@
-export type Lang = "en" | "ar";
+export type Lang = "en" | "ar" | "hi" | "ur";
 
-export type Bi = { en: string; ar: string };
+export type Bi = { en: string; ar: string; hi?: string; ur?: string };
+
+export const langMeta: { code: Lang; label: string; dir: "ltr" | "rtl" }[] = [
+  { code: "en", label: "EN", dir: "ltr" },
+  { code: "ar", label: "العربية", dir: "rtl" },
+  { code: "hi", label: "हिन्दी", dir: "ltr" },
+  { code: "ur", label: "اردو", dir: "rtl" },
+];
+
 
 export const ui = {
   slogan: {
