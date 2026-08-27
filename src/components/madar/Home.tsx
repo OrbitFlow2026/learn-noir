@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ChevronRight, Flame, Lock, PiggyBank } from "lucide-react";
+import { ChevronRight, Coins, Flame, Lock } from "lucide-react";
 import { useLang } from "@/lib/lang";
 import { paths, ui } from "@/lib/orbitflow-content";
 import { trackUi } from "@/lib/finance-track";
