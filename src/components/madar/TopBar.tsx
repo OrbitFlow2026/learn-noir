@@ -1,10 +1,10 @@
 import { Languages } from "lucide-react";
 import logo from "@/assets/orbitflow-logo.png";
 import { useLang } from "@/lib/lang";
-import { ui } from "@/lib/orbitflow-content";
+import { langMeta } from "@/lib/orbitflow-content";
 
 export function TopBar() {
-  const { t, toggle, lang } = useLang();
+  const { lang, setLang } = useLang();
 
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-border/60 bg-background/80 px-5 py-3 backdrop-blur-xl">
@@ -14,14 +14,24 @@ export function TopBar() {
           {lang === "ar" ? "أوربت فلو" : "OrbitFlow"}
         </span>
       </div>
-      <button
-        onClick={toggle}
-        aria-label="Toggle language"
-        className="flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3.5 py-1.5 text-sm font-semibold text-primary transition-all hover:bg-primary/20 active:scale-95"
-      >
-        <Languages className="h-4 w-4" />
-        {t(ui.langLabel)}
-      </button>
+      <div className="flex items-center gap-1 rounded-full border border-primary/30 bg-primary/5 p-1">
+        <Languages className="ms-1.5 h-3.5 w-3.5 shrink-0 text-primary" />
+        {langMeta.map((m) => (
+          <button
+            key={m.code}
+            onClick={() => setLang(m.code)}
+            aria-label={`Switch language to ${m.label}`}
+            aria-pressed={lang === m.code}
+            className={`rounded-full px-2.5 py-1 text-xs font-semibold transition-all active:scale-95 ${
+              lang === m.code
+                ? "bg-primary/25 text-primary"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            {m.label}
+          </button>
+        ))}
+      </div>
     </header>
   );
 }

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ChevronRight, Flame, Lock, PiggyBank } from "lucide-react";
+import { ChevronRight, Coins, Flame, Lock } from "lucide-react";
 import { useLang } from "@/lib/lang";
 import { paths, ui } from "@/lib/orbitflow-content";
 import { trackUi } from "@/lib/finance-track";
@@ -68,7 +68,7 @@ export function Home({
           onClick={onOpenTrack}
           className="surface-card flex w-full items-center gap-4 rounded-3xl p-5 text-start transition-colors hover:border-primary/50"
         >
-          <PiggyBank className="h-6 w-6 shrink-0 text-primary" />
+          <Coins className="h-6 w-6 shrink-0 text-primary" />
           <div className="min-w-0 flex-1">
             <p className="font-display text-base font-bold">{t(trackUi.trackTitle)}</p>
             <p className="mt-1 text-xs leading-relaxed text-muted-foreground">

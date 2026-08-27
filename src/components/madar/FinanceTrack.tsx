@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import { ArrowLeft, ArrowUpRight, PiggyBank, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Sparkles, Wallet } from "lucide-react";
 import { useLang } from "@/lib/lang";
 import { ui } from "@/lib/orbitflow-content";
 import { platforms, trackModules, trackUi } from "@/lib/finance-track";
+import { PoolCalculator } from "./PoolCalculator";
 
 function BudgetCalculator() {
   const { t, lang } = useLang();
