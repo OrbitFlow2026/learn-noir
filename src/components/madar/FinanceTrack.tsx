@@ -25,7 +25,7 @@ function BudgetCalculator() {
   return (
     <section className="surface-card mt-5 rounded-3xl p-5">
       <div className="flex items-center gap-2">
-        <PiggyBank className="h-5 w-5 text-primary" />
+        <Wallet className="h-5 w-5 text-primary" />
         <h3 className="font-display text-base font-bold">{t(trackUi.calcTitle)}</h3>
       </div>
       <p className="mt-1 text-xs text-muted-foreground">{t(trackUi.calcSub)}</p>
@@ -177,6 +177,8 @@ export function FinanceTrack({ onExit }: { onExit: () => void }) {
           </motion.article>
         ))}
       </div>
+
+      <PoolCalculator />
 
       <BudgetCalculator />
 
