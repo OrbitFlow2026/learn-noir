@@ -178,6 +178,8 @@ export function FinanceTrack({ onExit }: { onExit: () => void }) {
         ))}
       </div>
 
+      <PoolCalculator />
+
       <BudgetCalculator />
 
       <p className="mx-auto mt-8 max-w-sm text-center text-[10px] leading-relaxed text-muted-foreground/70">
