@@ -11,6 +11,18 @@ export const langMeta: { code: Lang; label: string; dir: "ltr" | "rtl" }[] = [
 
 
 export const ui = {
+  heroTitle: {
+    en: "Master Your UAE Salary & Build Wealth",
+    ar: "نظّم راتبك في الإمارات وابنِ ثروتك الذكية",
+    hi: "अपनी यूएई सैलरी संभालें और स्मार्ट वेल्थ बनाएँ",
+    ur: "اپنی یو اے ای تنخواہ سنبھالیں اور سمارٹ دولت بنائیں",
+  },
+  heroSub: {
+    en: "Calculate your budget with the global 50/30/20 rule and see where your money goes each month — in just 5 minutes.",
+    ar: "احسب ميزانيتك بالطريقة العالمية 50/30/20 واكتشف أين تذهب أموالك شهريًا في 5 دقائق فقط.",
+    hi: "वैश्विक 50/30/20 नियम से अपना बजट बनाएँ और सिर्फ़ 5 मिनट में जानें कि आपका पैसा हर महीने कहाँ जाता है।",
+    ur: "عالمی 50/30/20 اصول سے اپنا بجٹ بنائیں اور صرف 5 منٹ میں جانیں کہ آپ کا پیسہ ہر ماہ کہاں جاتا ہے۔",
+  },
   slogan: {
     en: "Expand your horizons in 5 minutes",
     ar: "وسّع آفاقك في ٥ دقائق",
