@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ArrowLeft, ArrowUpRight, Sparkles, Wallet, Play, GraduationCap } from "lucide-react";
 import { useLang } from "@/lib/lang";
 import { ui } from "@/lib/orbitflow-content";
