@@ -64,6 +64,11 @@ function BudgetCalculator() {
                 className={`h-full rounded-full ${row.bar}`}
               />
             </div>
+            {row.pct === 20 && (
+              <p className="mt-3 rounded-xl border border-primary/30 bg-primary/10 px-3 py-2.5 text-[11px] font-semibold leading-relaxed text-primary">
+                {t(trackUi.investWarn)}
+              </p>
+            )}
           </div>
         ))}
       </div>
@@ -81,8 +86,8 @@ function BudgetCalculator() {
             className="group rounded-2xl border border-primary/30 bg-primary/10 p-3 shadow-[var(--shadow-panel)] transition-all hover:border-primary/70 hover:bg-primary/20 hover:shadow-[var(--shadow-glow)] active:scale-[0.98]"
           >
             <span className="flex items-center gap-1 text-sm font-bold text-primary">
-              {p.name}
-              <ArrowUpRight className="h-3.5 w-3.5" />
+              {p.cta ? t(p.cta) : p.name}
+              <ArrowUpRight className="h-3.5 w-3.5 shrink-0" />
             </span>
             <span className="mt-0.5 block text-[11px] text-muted-foreground">
               {t(p.tag)}
@@ -169,8 +174,8 @@ export function FinanceTrack({ onExit }: { onExit: () => void }) {
                   rel="noreferrer noopener"
                   className="mt-5 flex items-center justify-between rounded-2xl border border-primary/30 bg-primary/10 px-4 py-3 text-sm font-bold text-primary transition-colors hover:border-primary/70 hover:bg-primary/20"
                 >
-                  <span>{platform.name}</span>
-                  <ArrowUpRight className="h-4 w-4" />
+                  <span>{platform.cta ? t(platform.cta) : platform.name}</span>
+                  <ArrowUpRight className="h-4 w-4 shrink-0" />
                 </a>
               );
             })()}

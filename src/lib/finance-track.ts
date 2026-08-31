@@ -79,6 +79,12 @@ export const trackUi = {
     hi: "अपने 20% को काम पर लगाएँ",
     ur: "اپنے 20% کو کام پر لگائیں",
   },
+  investWarn: {
+    en: "⚠️ Don't leave this money idle in a zero-interest account! Put your 20% to work in global stocks or Dubai real estate — starting from just 50 AED — via the regulated platforms below:",
+    ar: "⚠️ لا تترك هذه الأموال مجمدة في حساب بلا فائدة! استثمر نسبة الـ٢٠٪ في أسهم عالمية أو عقارات دبي بمبالغ تبدأ من ٥٠ درهمًا عبر المنصات المرخصة أدناه:",
+    hi: "⚠️ इस पैसे को बिना ब्याज वाले खाते में बेकार न छोड़ें! अपने 20% को ग्लोबल स्टॉक्स या दुबई रियल एस्टेट में लगाएँ — सिर्फ़ 50 दिरहम से शुरू — नीचे दिए रेग्युलेटेड प्लेटफ़ॉर्म के ज़रिए:",
+    ur: "⚠️ اس رقم کو بلا سود اکاؤنٹ میں بے کار نہ چھوڑیں! اپنے 20% کو عالمی اسٹاکس یا دبئی رئیل اسٹیٹ میں لگائیں — صرف 50 درہم سے شروع — نیچے دیے گئے ریگولیٹڈ پلیٹ فارمز کے ذریعے:",
+  },
   openTrack: { en: "Open track", ar: "افتح المسار", hi: "ट्रैक खोलें", ur: "ٹریک کھولیں" },
 } satisfies Record<string, Bi>;
 
@@ -221,7 +227,7 @@ export const trackModules: TrackModule[] = [
   },
 ];
 
-export const platforms: { name: string; url: string; tag: Bi }[] = [
+export const platforms: { name: string; url: string; tag: Bi; cta?: Bi }[] = [
   {
     name: "National Bonds",
     url: "https://www.nationalbonds.ae",
@@ -235,11 +241,33 @@ export const platforms: { name: string; url: string; tag: Bi }[] = [
   {
     name: "Stake",
     url: STAKE_URL,
-    tag: { en: "Property from AED 500", ar: "عقار من ٥٠٠ درهم" },
+    cta: {
+      en: "🏢 Invest in Dubai Real Estate",
+      ar: "🏢 استثمر في عقارات دبي",
+      hi: "🏢 दुबई रियल एस्टेट में निवेश करें",
+      ur: "🏢 دبئی رئیل اسٹیٹ میں سرمایہ کاری کریں",
+    },
+    tag: {
+      en: "Start from 500 AED · potential monthly rental income",
+      ar: "ابدأ بـ٥٠٠ درهم · دخل إيجاري شهري محتمل",
+      hi: "500 दिरहम से शुरू करें · संभावित मासिक किराया आय",
+      ur: "500 درہم سے شروع کریں · ممکنہ ماہانہ کرایہ آمدنی",
+    },
   },
   {
     name: "Sarwa",
     url: SARWA_URL,
-    tag: { en: "ETFs & stocks", ar: "صناديق وأسهم" },
+    cta: {
+      en: "📈 Invest in Stocks & Gold",
+      ar: "📈 استثمر في الأسهم والذهب",
+      hi: "📈 स्टॉक्स और गोल्ड में निवेश करें",
+      ur: "📈 اسٹاکس اور گولڈ میں سرمایہ کاری کریں",
+    },
+    tag: {
+      en: "Regulated by the DFSA · sign-up bonus offers may apply",
+      ar: "مرخصة من سلطة دبي للخدمات المالية (DFSA) · قد تتوفر مكافآت تسجيل",
+      hi: "DFSA द्वारा रेग्युलेटेड · साइन-अप बोनस ऑफ़र लागू हो सकते हैं",
+      ur: "DFSA سے ریگولیٹڈ · سائن اپ بونس آفرز لاگو ہو سکتے ہیں",
+    },
   },
 ];
