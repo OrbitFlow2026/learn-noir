@@ -8,8 +8,13 @@ import { PoolCalculator } from "./PoolCalculator";
 
 function BudgetCalculator() {
   const { t, lang } = useLang();
-  const [salary, setSalary] = useState("");
+  const [salary, setSalary] = useState("10,000");
   const value = Number(salary.replace(/[^\d.]/g, "")) || 0;
+
+  const onSalaryChange = (raw: string) => {
+    const digits = raw.replace(/[^\d]/g, "").slice(0, 12);
+    setSalary(digits ? Number(digits).toLocaleString("en-US") : "");
+  };
 
   const fmt = (n: number) =>
     new Intl.NumberFormat(lang === "ar" ? "ar-AE" : "en-AE", {
