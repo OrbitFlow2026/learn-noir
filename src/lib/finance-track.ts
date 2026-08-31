@@ -241,11 +241,33 @@ export const platforms: { name: string; url: string; tag: Bi; cta?: Bi }[] = [
   {
     name: "Stake",
     url: STAKE_URL,
-    tag: { en: "Property from AED 500", ar: "عقار من ٥٠٠ درهم" },
+    cta: {
+      en: "🏢 Invest in Dubai Real Estate",
+      ar: "🏢 استثمر في عقارات دبي",
+      hi: "🏢 दुबई रियल एस्टेट में निवेश करें",
+      ur: "🏢 دبئی رئیل اسٹیٹ میں سرمایہ کاری کریں",
+    },
+    tag: {
+      en: "Start from 500 AED · potential monthly rental income",
+      ar: "ابدأ بـ٥٠٠ درهم · دخل إيجاري شهري محتمل",
+      hi: "500 दिरहम से शुरू करें · संभावित मासिक किराया आय",
+      ur: "500 درہم سے شروع کریں · ممکنہ ماہانہ کرایہ آمدنی",
+    },
   },
   {
     name: "Sarwa",
     url: SARWA_URL,
-    tag: { en: "ETFs & stocks", ar: "صناديق وأسهم" },
+    cta: {
+      en: "📈 Invest in Stocks & Gold",
+      ar: "📈 استثمر في الأسهم والذهب",
+      hi: "📈 स्टॉक्स और गोल्ड में निवेश करें",
+      ur: "📈 اسٹاکس اور گولڈ میں سرمایہ کاری کریں",
+    },
+    tag: {
+      en: "Regulated by the DFSA · sign-up bonus offers may apply",
+      ar: "مرخصة من سلطة دبي للخدمات المالية (DFSA) · قد تتوفر مكافآت تسجيل",
+      hi: "DFSA द्वारा रेग्युलेटेड · साइन-अप बोनस ऑफ़र लागू हो सकते हैं",
+      ur: "DFSA سے ریگولیٹڈ · سائن اپ بونس آفرز لاگو ہو سکتے ہیں",
+    },
   },
 ];

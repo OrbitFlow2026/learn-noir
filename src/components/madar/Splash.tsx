@@ -19,22 +19,31 @@ export function Splash({ onStart }: { onStart: () => void }) {
         <img src={logo} alt="OrbitFlow logo" width={140} height={140} className="h-32 w-32" />
       </motion.div>
 
-      <motion.h1
+      <motion.p
         initial={{ y: 18, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.15 }}
-        className="text-gradient-teal mt-7 text-5xl font-bold"
+        className="mt-7 text-xs font-bold uppercase tracking-[0.25em] text-primary"
       >
         {lang === "ar" ? "أوربت فلو" : "OrbitFlow"}
+      </motion.p>
+
+      <motion.h1
+        initial={{ y: 18, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.22 }}
+        className="text-gradient-teal mt-2 max-w-sm text-balance text-3xl font-bold leading-tight"
+      >
+        {t(ui.heroTitle)}
       </motion.h1>
 
       <motion.p
         initial={{ y: 18, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.28 }}
-        className="mt-3 max-w-xs text-balance text-base text-muted-foreground"
+        transition={{ delay: 0.3 }}
+        className="mt-3 max-w-xs text-balance text-sm text-muted-foreground"
       >
-        {t(ui.slogan)}
+        {t(ui.heroSub)}
       </motion.p>
 
       <motion.button
