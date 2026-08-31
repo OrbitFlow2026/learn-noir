@@ -41,7 +41,7 @@ function BudgetCalculator() {
       <input
         inputMode="numeric"
         value={salary}
-        onChange={(e) => setSalary(e.target.value)}
+        onChange={(e) => onSalaryChange(e.target.value)}
         placeholder="15000"
         className="mt-2 w-full rounded-2xl border border-border bg-background/60 px-4 py-3 text-lg font-bold text-foreground outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-primary"
       />
@@ -81,7 +81,7 @@ function BudgetCalculator() {
       <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
         {t(trackUi.ctaTitle)}
       </p>
-      <div className="mt-3 grid grid-cols-2 gap-2.5">
+      <div className="mt-3 grid grid-cols-1 gap-2.5">
         {platforms.map((p) => (
           <a
             key={p.name}
