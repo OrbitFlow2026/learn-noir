@@ -1,16 +1,11 @@
-import { QueryClient } from "@tanstack/react-query";
-import { createRouter } from "@tanstack/react-router";
-import { routeTree } from "./routeTree.gen";
+import React from 'react';
+import GroceryRadar from './components/GroceryRadar';
 
-export const getRouter = () => {
-  const queryClient = new QueryClient();
-
-  const router = createRouter({
-    routeTree,
-    context: { queryClient },
-    scrollRestoration: true,
-    defaultPreloadStaleTime: 0,
-  });
-
-  return router;
-};
+export default function Router() {
+  return (
+    <div className="min-h-screen bg-gray-100 py-8">
+      {/* عرض رادار أسعار البقالة في دبي كصفحة رئيسية للتطبيق */}
+      <GroceryRadar />
+    </div>
+  );
+}
